@@ -1,5 +1,4 @@
-# should use dind image
-FROM docker:19.03.11-dind
+FROM docker:19.03.11
 
 RUN apk update && \
   apk add make gcc jq
@@ -33,3 +32,5 @@ RUN apk --no-cache add \
     && rm glibc-${GLIBC_VER}.apk \
     && rm glibc-bin-${GLIBC_VER}.apk \
     && rm -rf /var/cache/apk/*
+
+COPY docker ~/.docker
