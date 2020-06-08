@@ -1,4 +1,5 @@
-FROM docker:19.03.11
+# should use dind image
+FROM docker:19.03.11-dind
 
 RUN apk update && \
   apk add make gcc jq
